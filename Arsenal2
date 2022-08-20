@@ -30,7 +30,6 @@ Client = {
         LookMeth = 'Look Up',                                                                                                                                                                                                                                                 
         Test = '',
         FOV = 150,
-        ChatMsg = 'Bolts Ware v8 On Top',
         AimPart = 'Head'
 
         
@@ -2402,25 +2401,6 @@ MiscTabMainSection:Dropdown("Device Spoofer",{"PC","Mobile","XBOX","Wii Steering
         end
     end
 end)
-
-MiscTabMainSection:Toggle("Chat Spam (xonae i had to remake this smh)",function(state)
-    Client.Toggles.SpamChat = state
-end)
-spawn(function()
-    while true do
-        wait(.01)
-        local A_1 = "Haha!"
-local A_2 = Client.Values.ChatMsg
-local A_3 = false
-local Event = game:GetService("ReplicatedStorage").Events.PlayerChatted
-Event:FireServer(A_1, A_2, A_3)
-        
-    end
-end)
-MiscTabMainSection:Textbox("Custom Chat Message","Bolts Ware V8 On Top",function(x)
-		Client.Values.ChatMsg = tostring(x)
-	end)
-
 MiscTabMainSection:Dropdown("Curse",ArsoniaTable.Variables.Curses,function(x)
     ArsoniaTable.Misc.Main.Curse=x
     if ArsoniaTable.Misc.Main.Enabled then
@@ -5311,4 +5291,3 @@ end
 --Fixes
 ArsoniaTable.Variables.Levels.StartBar=ArsoniaTable.Variables.Levels_OLD.StartBar
 ArsoniaTable.Variables.Levels.EndBar=ArsoniaTable.Variables.Levels_OLD.EndBar
-
